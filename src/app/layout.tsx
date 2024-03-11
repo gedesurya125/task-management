@@ -36,3 +36,4 @@ export default function RootLayout({
 }
 
 // theme source: https://ui.shadcn.com/docs/installation/next
+// integrating next js prisma and postgres https://vercel.com/guides/nextjs-prisma-postgres
