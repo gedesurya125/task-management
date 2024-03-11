@@ -40,3 +40,4 @@ export default async function RootLayout({
 
 // theme source: https://ui.shadcn.com/docs/installation/next
 // integrating next js prisma and postgres https://vercel.com/guides/nextjs-prisma-postgres
+//? create realtime app next js https://hackernoon.com/building-real-time-applications-with-nextjs-134-server-actions-1-introduction
