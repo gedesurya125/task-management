@@ -40,10 +40,21 @@ model Task {
 }
 
 model List {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
   createdAt   String
   updatedAt   String
   title       String
   description String
   order       Int
+  workspace   Workspace? @relation(fields: [workspaceId], references: [id])
+  workspaceId String?    @db.ObjectId
+}
+
+model Workspace {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   String
+  updatedAt   String
+  title       String
+  description String
+  list        List[]
 }

@@ -1,12 +1,14 @@
-"use client";
+import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
+import { CardContent, CardHeader } from "@/components/ui/card";
 import { createUser } from "@/prismaClient/queries/createUser";
 import React from "react";
+import { AddNewWorkspaceButton } from "./AddNewWorkspaceButton";
 
 export const Dashboard = () => {
-  const handleClick = async () => {
-    const newUser = await createUser();
-    console.log("this is the new user", newUser);
-  };
-  return <Button onClick={handleClick}>CrateUser</Button>;
+  return (
+    <div className="container grid grid-cols-5 gap-4 py-5">
+      <AddNewWorkspaceButton />
+    </div>
+  );
 };
