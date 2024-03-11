@@ -14,14 +14,14 @@ datasource db {
 }
 
 model User {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt String
-  updatedAt String
-  name      String
-  role      String
-  email     String
-  username  String
-  password  String
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt String?
+  updatedAt String?
+  name      String?
+  role      String?
+  email     String?
+  username  String?
+  password  String?
   tasks     Task[]
 }
 
