@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from "tailwindcss/types/config";
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 const config = {
   darkMode: ["class"],
@@ -78,7 +80,16 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addBase, theme }: PluginAPI) {
+      addBase({
+        h1: { fontSize: theme("fontSize.2xl") },
+        h2: { fontSize: theme("fontSize.xl") },
+        h3: { fontSize: theme("fontSize.lg") },
+      });
+    }),
+  ],
 } satisfies Config;
 
 export default config;

@@ -9,5 +9,5 @@ export const NavigationBar = () => {
 };
 
 const AppName = () => {
-  return <h1>Task Management</h1>;
+  return <p className="font-bold">Task Management</p>;
 };

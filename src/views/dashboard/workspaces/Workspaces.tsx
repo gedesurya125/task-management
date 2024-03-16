@@ -5,9 +5,9 @@ import { createUser } from "@/prismaClient/queries/createUser";
 import React from "react";
 import { AddNewWorkspaceButton } from "./AddNewWorkspaceButton";
 
-export const Dashboard = () => {
+export const Workspaces = () => {
   return (
-    <div className="container grid grid-cols-5 gap-4 py-5">
+    <div id="workspaces" className="container grid grid-cols-5 gap-4 py-5">
       <AddNewWorkspaceButton />
     </div>
   );

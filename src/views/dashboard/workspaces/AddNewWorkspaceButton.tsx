@@ -1,4 +1,3 @@
-"use client";
 import { Card, CardTitle } from "@/components/ui/card";
 import React from "react";
 import { Plus } from "lucide-react";
@@ -22,7 +21,9 @@ export const AddNewWorkspaceButton = () => {
         <button>
           <Card className="p-4 flex items-center border-dashed border-black">
             <Plus />
-            <CardTitle className="text-lg mt-0 ml-2">Add Workspace</CardTitle>
+            <CardTitle className="text-base mt-0 ml-2 ">
+              Add Workspace
+            </CardTitle>
           </Card>
         </button>
       </DialogTrigger>
