@@ -1,7 +1,7 @@
 "use server";
 import { runQuery } from "./runQuery";
 
-export const createUser = async ({
+export const createWorkspace = async ({
   title,
   description,
 }: {

@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Formik, Form, useField } from "formik";
+import { createWorkspace } from "@/prismaClient/queries/createWorkspace";
 
 const workspaceSchema = object({
   title: string().required(),
@@ -23,8 +24,10 @@ const workspaceSchema = object({
 });
 
 export const AddNewWorkspaceButton = () => {
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
         <button>
           <Card className="p-4 flex items-center border-dashed border-black">
@@ -46,12 +49,25 @@ export const AddNewWorkspaceButton = () => {
             title: "",
             description: "",
           }}
-          onSubmit={(values) => {
+          onSubmit={async (values, helpers) => {
             console.log("this is the formik values", values);
+            try {
+              const res = await createWorkspace({
+                title: values.title,
+                description: values.description,
+              });
+              console.log("this is the response", res);
+              if (res) {
+                helpers.resetForm();
+                setDialogOpen(false);
+              }
+            } catch (err) {
+              console.log("error crating workspace", err);
+            }
           }}
           validationSchema={workspaceSchema}
         >
-          {({ handleBlur, handleChange, values }) => {
+          {() => {
             return (
               <Form>
                 <div className="grid gap-4 py-4">
