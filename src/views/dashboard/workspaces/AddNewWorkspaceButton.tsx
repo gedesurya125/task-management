@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Formik, Form, useField } from "formik";
 import { createWorkspace } from "@/prismaClient/queries/createWorkspace";
+import { WorkspaceCard } from "@/components/WorkspaceCard";
 
 const workspaceSchema = object({
   title: string().required(),
@@ -26,17 +27,12 @@ const workspaceSchema = object({
 export const AddNewWorkspaceButton = () => {
   const [dialogOpen, setDialogOpen] = React.useState(false);
 
+  React.useEffect(() => {});
+
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-        <button>
-          <Card className="p-4 flex items-center border-dashed border-black">
-            <Plus />
-            <CardTitle className="text-base mt-0 ml-2 ">
-              Add Workspace
-            </CardTitle>
-          </Card>
-        </button>
+        <WorkspaceCard />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

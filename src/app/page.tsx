@@ -12,7 +12,7 @@ export default async function Home() {
     <>
       <ClientLogger data={{ workspaces }} />
       <Header />
-      <Workspaces />
+      <Workspaces workspaces={workspaces} />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { runQuery } from "./runQuery";
 
 export const getWorkspaces = async () => {
