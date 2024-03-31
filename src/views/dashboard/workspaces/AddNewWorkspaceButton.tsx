@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Formik, Form, useField } from "formik";
 import { createWorkspace } from "@/prismaClient/queries/createWorkspace";
 import { WorkspaceCard } from "@/components/WorkspaceCard";
+import { useRouter } from "next/navigation";
 
 const workspaceSchema = object({
   title: string().required(),
@@ -26,13 +27,14 @@ const workspaceSchema = object({
 
 export const AddNewWorkspaceButton = () => {
   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {});
 
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-        <WorkspaceCard />
+        <WorkspaceCard dashed title="Add New Workspace" Icon={() => <Plus />} />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -56,6 +58,7 @@ export const AddNewWorkspaceButton = () => {
               if (res) {
                 helpers.resetForm();
                 setDialogOpen(false);
+                router.refresh();
               }
             } catch (err) {
               console.log("error crating workspace", err);
