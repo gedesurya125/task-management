@@ -23,5 +23,5 @@
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"],
-  "files": ["./types.d.ts"]
+  "files": ["./types.d.ts", "src/components/BackButton.tsx"]
 }
