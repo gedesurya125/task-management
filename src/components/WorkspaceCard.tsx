@@ -1,8 +1,7 @@
 import React from "react";
 import { Card, CardTitle } from "./ui/card";
-import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { ClearButton } from "./ClearButton";
 
 interface WorkspaceCardProps
   extends React.SelectHTMLAttributes<HTMLButtonElement> {
@@ -17,22 +16,8 @@ export const WorkspaceCard = React.forwardRef<
   HTMLButtonElement,
   WorkspaceCardProps
 >(({ title, dashed, Icon, asLink, href, className, ...props }, ref) => {
-  const Element = asLink
-    ? ({ children }: { children: React.ReactNode }) => {
-        return (
-          <Link href={href || "/"} className={className}>
-            {children}
-          </Link>
-        );
-      }
-    : ({ children }: { children: React.ReactNode }) => (
-        <button ref={ref} className={className} {...props}>
-          {children}
-        </button>
-      );
-
   return (
-    <Element>
+    <ClearButton asLink={asLink} href={href} ref={ref} {...props}>
       <Card
         className={cn(
           "p-4 flex items-center border-solid border-black",
@@ -42,7 +27,7 @@ export const WorkspaceCard = React.forwardRef<
         {!!Icon && <Icon />}
         <CardTitle className="text-base mt-0 ml-2 ">{title}</CardTitle>
       </Card>
-    </Element>
+    </ClearButton>
   );
 });
 
