@@ -40,7 +40,7 @@ const ExistingWorkspaceCard = ({
       href={`/workspace/${workspace.id}`}
       className="justify-between flex"
     >
-      <CardMenu />
+      <CardMenu workspaceId={workspace.id} />
     </WorkspaceCard>
   );
 };
