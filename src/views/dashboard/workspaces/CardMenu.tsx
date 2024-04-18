@@ -18,7 +18,7 @@ export const CardMenu = ({ workspaceId }: { workspaceId: string }) => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="rounded rounded-full relative p-0 w-10 aspect-square flex justify-center items-center outline-none">
+      <DropdownMenuTrigger className="rounded rounded-full relative p-3 aspect-square flex justify-center items-center outline-none">
         <Ellipsis className="absolute" size={20} />
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -54,7 +54,11 @@ const CardMenuItem = ({
 }) => {
   return (
     <DropdownMenuItem asChild>
-      <Button variant="ghost" className="p-0" onClick={handleClick}>
+      <Button
+        variant="ghost"
+        className="w-full flex justify-start cursor-pointer"
+        onClick={handleClick}
+      >
         <Icon size={14} /> <span className="ml-2">{text}</span>
       </Button>
     </DropdownMenuItem>
