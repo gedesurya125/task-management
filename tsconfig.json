@@ -23,5 +23,9 @@
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"],
-  "files": ["./types.d.ts", "src/components/BackButton.tsx"]
+  "files": [
+    "./types.d.ts",
+    "src/components/BackButton.tsx",
+    "./src/views/dashboard/workspaces/CardMenu.tsx"
+  ]
 }

@@ -6,22 +6,41 @@ import React from "react";
 import { AddNewWorkspaceButton } from "./AddNewWorkspaceButton";
 import { Workspace } from "@prisma/client";
 import { WorkspaceCard } from "@/components/WorkspaceCard";
-import Link from "next/link";
+import { CardMenu } from "./CardMenu";
 
 export const Workspaces = ({ workspaces }: { workspaces: Workspace[] }) => {
   return (
     <div id="workspaces" className="container grid grid-cols-5 gap-4 py-5">
       {workspaces.map((workspace, index) => {
         return (
-          <WorkspaceCard
+          <ExistingWorkspaceCard
             key={index}
-            title={workspace.title}
-            asLink
-            href={`/workspace/${workspace.id}`}
+            index={index}
+            workspace={workspace}
           />
         );
       })}
       <AddNewWorkspaceButton />
     </div>
+  );
+};
+
+const ExistingWorkspaceCard = ({
+  index,
+  workspace,
+}: {
+  index: number;
+  workspace: Workspace;
+}) => {
+  return (
+    <WorkspaceCard
+      key={index}
+      title={workspace.title}
+      asLink
+      href={`/workspace/${workspace.id}`}
+      className="justify-between flex"
+    >
+      <CardMenu />
+    </WorkspaceCard>
   );
 };
