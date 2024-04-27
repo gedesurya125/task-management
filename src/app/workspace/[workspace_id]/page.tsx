@@ -2,15 +2,14 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { Header, Main } from "@/views/workspace-detail";
+import { NavigationBar } from "@/components/NavigationBar";
 
 export const page = ({ params }: { params: { workspace_id: string } }) => {
-  console.log("this is the page prosp", params.workspace_id);
-
   return (
-    <>
-      <Header />
+    <div className="h-screen overflow-hidden flex flex-col">
+      <NavigationBar />
       <Main />
-    </>
+    </div>
   );
 };
 

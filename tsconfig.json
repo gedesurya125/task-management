@@ -26,6 +26,7 @@
   "files": [
     "./types.d.ts",
     "src/components/BackButton.tsx",
-    "./src/views/dashboard/workspaces/CardMenu.tsx"
+    "./src/views/dashboard/workspaces/CardMenu.tsx",
+    "./src/views/workspace-detail/main/ListContainer.tsx"
   ]
 }

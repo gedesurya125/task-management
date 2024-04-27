@@ -31,7 +31,6 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <NavigationBar />
         {children}
       </body>
     </html>

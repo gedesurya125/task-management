@@ -1,4 +1,5 @@
 import { ClientLogger } from "@/components/ClientLogger";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { createUser } from "@/prismaClient/queries/createUser";
 import { getWorkspaces } from "@/prismaClient/queries/getWorkspaces";
@@ -10,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      <ClientLogger data={{ workspaces }} />
+      <NavigationBar />
       <Header />
       <Workspaces workspaces={workspaces} />
     </>
