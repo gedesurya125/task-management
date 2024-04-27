@@ -11,7 +11,7 @@ export function ListContainer() {
   return (
     <motion.div
       id="draggable-container"
-      className="flex border-black border-solid border border-1 justify-start items-start overflow-x-auto overflow-y-hidden w-full py-2 cursor-grab"
+      className="flex border-black border-solid border border-1 justify-start items-start overflow-x-auto overflow-y-hidden w-full py-2"
     >
       {fakeListItem.map((listItem, index) => {
         return (

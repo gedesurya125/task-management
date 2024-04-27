@@ -38,7 +38,7 @@ export const useMouseDrag = (elementId: string) => {
         document.removeEventListener("mousemove", mouseMoveHandler);
         document.removeEventListener("mouseup", mouseUpHandler);
 
-        ele.style.cursor = "grab";
+        ele.style.cursor = "default";
         ele.style.removeProperty("user-select");
       };
 
